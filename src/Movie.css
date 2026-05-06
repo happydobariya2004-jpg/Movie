@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ───── Wrapper ───── */
+.bb-wrapper {
+  background: #080a0f;
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+  color: #f0ede8;
+  overflow: hidden;
+}
+
+
+/* ───── Hero ───── */
+.bb-hero {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+}
+
+.bb-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, #080a0f 32%, transparent 70%),
+    linear-gradient(to top, #080a0f 0%, transparent 50%);
+  z-index: 2;
+}
+
+.bb-hero-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 55%;
+  background: linear-gradient(135deg, #1a0d05 0%, #3d2208 30%, #1a0f08 60%, #080a0f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.bb-ghost-icon {
+  position: absolute;
+  font-size: 120px;
+  opacity: 0.12;
+  filter: sepia(1);
+}
+
+.bb-lantern-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-30%, -50%);
+  font-size: 90px;
+  opacity: 0.6;
+  animation: bbFlicker 2.5s ease-in-out infinite alternate;
+}
+
+.bb-lantern-glow {
+  position: absolute;
+  right: 120px;
+  top: 80px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(255, 180, 40, 0.18) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 3;
+  pointer-events: none;
+  animation: bbFlicker 3s ease-in-out infinite alternate;
+}
+
+@keyframes bbFlicker {
+  0%   { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 1;   transform: scale(1.08); }
+}
+
+/* ───── Hero Content ───── */
+.bb-hero-content {
+  position:relative;
+  bottom: 60px;
+  left: 40px;
+  z-index: 5;
+  max-width: 420px;
+  top: 5px;
+}
+
+.bb-badge-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  align-items: center;
+}
+
+.bb-badge {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+.bb-badge-horror { background: #8b1a1a; color: #f4c2c2; }
+.bb-badge-comedy { background: #1a3a5c; color: #a8cff0; }
+.bb-badge-new    { background: #e8c97a; color: #1a0f00; }
+
+.bb-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 72px;
+  letter-spacing: 4px;
+  line-height: 0.9;
+  margin-bottom: 8px;
+  text-shadow: 0 0 60px rgba(200, 130, 10, 0.4);
+}
+
+.bb-subtitle {
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: #e8c97a;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.bb-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: #7a7268;
+  margin-bottom: 24px;
+  align-items: center;
+  letter-spacing: 0.5px;
+  flex-wrap: wrap;
+}
+
+.bb-meta-dot {
+  width: 3px;
+  height: 3px;
+  background: #4a4540;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.bb-rating {
+  color: #e8c97a;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.bb-cert {
+  border: 0.5px solid #3a3530;
+  padding: 1px 6px;
+  border-radius: 2px;
+  font-size: 10px;
+}
+
+.bb-desc {
+  font-size: 13px;
+  font-weight: 300;
+  color: #8a8078;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+/* ───── Buttons ───── */
+.bb-btn-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.bb-btn-play {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #e8c97a;
+  color: #0d0a00;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  padding: 11px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+
+.bb-btn-play:hover {
+  background: #f0d890;
+}
+
+.bb-btn-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #a09890;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  padding: 11px 20px;
+  border: 0.5px solid #3a3530;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.bb-btn-info:hover {
+  border-color: #6a6258;
+  color: #f0ede8;
+}
+
+/* ───── Progress Bar ───── */
+.bb-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #1a1612;
+  z-index: 5;
+}
+
+.bb-progress-fill {
+  height: 100%;
+  width: 38%;
+  background: #e8c97a;
+}
+
+/* ───── Genre Pills ───── */
+.bb-genre-row {
+  display: flex;
+  gap: 8px;
+  padding: 0 40px 32px;
+  flex-wrap: wrap;
+}
+
+.bb-genre-pill {
+  padding: 6px 16px;
+  border: 0.5px solid #2a2520;
+  border-radius: 20px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #6a6258;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.bb-genre-pill:hover {
+  border-color: #5a5248;
+  color: #a09890;
+}
+
+.bb-genre-pill.active {
+  border-color: #e8c97a;
+  color: #e8c97a;
+  background: rgba(232, 201, 122, 0.05);
+}
+
+/* ───── Cards Section ───── */
+.bb-section {
+  padding: 32px 40px 20px;
+}
+
+.bb-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.bb-section-title {
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 500;
+  color: #e8c97a;
+  text-transform: uppercase;
+}
+
+.bb-section-more {
+  font-size: 11px;
+  color: #4a4540;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.bb-section-more:hover {
+  color: #7a7268;
+}
+
+.bb-cards-row {
+  display: flex;
+  gap: 14px;
+}
+
+/* ───── Movie Card ───── */
+.bb-card {
+  flex: 0 0 calc(25% - 11px);
+  cursor: pointer;
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.bb-card:hover {
+  transform: scale(1.03);
+}
+
+.bb-card-img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bb-card-icon {
+  font-size: 40px;
+  opacity: 0.6;
+}
+
+.bb-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 10, 15, 0.95) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+}
+
+.bb-card:hover .bb-card-overlay {
+  opacity: 1;
+}
+
+.bb-card-play {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e8c97a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bb-card-info {
+  padding: 10px 2px;
+}
+
+.bb-card-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: #d0cdc8;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bb-card-year {
+  font-size: 11px;
+  color: #4a4540;
+}
+
+.bb-card-active .bb-card-img {
+  box-shadow: 0 0 0 2px #e8c97a;
+}
+
+.bb-cards-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+
+.bb-cards-row::-webkit-scrollbar {
+  display: none;
+}
+
+.bb-card {
+  min-width: 180px;
+  flex-shrink: 0;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bb-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.bb-card:hover {
+  transform: scale(1.05);
+}
+
+.bb-card-active {
+  transform: scale(1.1);
+}
+
+.bb-hero-right img {
+  width: 300px;
+}
+
+@media (min-width: 768px) {
+  .bb-hero-right img {
+    width: 550px;
+  }
+}
