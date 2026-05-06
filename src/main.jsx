@@ -8,6 +8,7 @@ import Home from './Home.jsx'
 import Movies from './Movies.jsx'
 import Series from './Series.jsx'
 import Categories from './Categories.jsx'
+import Login from './Login.jsx'
 
 
  let allRout=createBrowserRouter([
@@ -27,6 +28,10 @@ import Categories from './Categories.jsx'
   path:'Categories',
   element:<Categories/>
   },
+  {
+    path:'/login',
+    element:<Login/>
+  }
  ])
 
 

@@ -34,7 +34,9 @@ const Navbar = () => {
           {/* Icons */}
           <div className="col-lg-2 col-6 d-flex justify-content-end gap-3">
             <i className="text-light  fa-solid fa-magnifying-glass"></i>
-            <i className="text-light fa-solid fa-user"></i>
+           <Link to="/login">
+  <i className="text-light fa-solid fa-user"></i>
+</Link>
           </div>
 
         </div>
