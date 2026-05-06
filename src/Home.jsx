@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import Navbar from "./Navbar.jsx"
 
 const MOVIES = [
   {
@@ -13,7 +14,8 @@ const MOVIES = [
     id: 2,
     title: "Farzi",
     year: "2023",
-    icon: "https://i.pinimg.com/736x/63/c2/75/63c275454a505fa8d98429a32a4d174f.jpg",
+    icon: " https://i.pinimg.com/736x/b9/4c/05/b94c05a007be8988685c363be52e0b5a.jpg",
+   
     progress: 72,
     genre: "Thriller",
   },
@@ -29,7 +31,7 @@ const MOVIES = [
     id: 4,
     title: "Money Heist",
     year: "2023",
-    icon: "https://i.pinimg.com/1200x/05/9f/55/059f5521cb54b9f2c6bdaf0a47a21319.jpg",
+    icon: "https://i.pinimg.com/1200x/d0/ec/7e/d0ec7e37324d893c9038b8ce3cc94b32.jpg",
     progress: 91,
     genre: "Thriller",
   },
@@ -37,15 +39,15 @@ const MOVIES = [
     id: 5,
     title: "Sacred Games",
     year: "2022",
-    icon: "https://i.pinimg.com/736x/5a/0d/c7/5a0dc754a76af3000a1497dcdcc17c67.jpg",
+    icon: "https://i.pinimg.com/736x/bc/fe/47/bcfe47b4b2fbcb1dd40cef44569d6d81.jpg",
     progress: 20,
     genre: "Crime",
   },
   {
     id: 6,
-    title: "Scam 1992",
-    year: "2023",
-    icon: "https://i.pinimg.com/1200x/05/9f/55/059f5521cb54b9f2c6bdaf0a47a21319.jpg",
+    title: "Dhurandhar",
+    year: "2025",
+    icon: "https://i.pinimg.com/736x/63/c2/75/63c275454a505fa8d98429a32a4d174f.jpg",
     progress: 65,
     genre: "Drama",
   },
@@ -66,65 +68,8 @@ const styles = `
     overflow-x: hidden;
   }
 
-  /* ── NAVBAR ── */
-  .ott-nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 clamp(1rem, 4vw, 3rem);
-    height: 64px;
-    background: linear-gradient(to bottom, rgba(8,8,16,0.98), rgba(8,8,16,0));
-    backdrop-filter: blur(2px);
-  }
-  .ott-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    letter-spacing: 3px;
-    color: #ff3c3c;
-    text-shadow: 0 0 24px rgba(255,60,60,0.5);
-  }
-  .ott-nav-links {
-    display: flex;
-    gap: clamp(0.8rem, 2vw, 2rem);
-    list-style: none;
-  }
-  .ott-nav-links a {
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    transition: color 0.2s;
-  }
-  .ott-nav-links a:hover { color: #fff; }
-  .ott-nav-actions { display: flex; gap: 0.75rem; align-items: center; }
-  .ott-search-btn {
-    background: none;
-    border: none;
-    color: rgba(255,255,255,0.7);
-    cursor: pointer;
-    padding: 6px;
-    display: flex;
-    align-items: center;
-    transition: color 0.2s;
-  }
-  .ott-search-btn:hover { color: #fff; }
-  .ott-avatar {
-    width: 34px; height: 34px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #ff3c3c, #ff8c3c);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.8rem; font-weight: 600; cursor: pointer;
-    border: 2px solid rgba(255,255,255,0.15);
-  }
-  @media (max-width: 640px) {
-    .ott-nav-links { display: none; }
-  }
-
-  /* ── HERO ── */
+ 
+   /* ── HERO ── */
   .ott-hero {
     position: relative;
     min-height: 100svh;
@@ -461,24 +406,8 @@ export default function BhoothBangla() {
       <style>{styles}</style>
 
       {/* NAVBAR */}
-      <nav className="ott-nav">
-        <div className="ott-logo">StreamX</div>
-        <ul className="ott-nav-links">
-          {["Home", "Movies", "Series", "Originals"].map((l) => (
-            <li key={l}><a href="#">{l}</a></li>
-          ))}
-        </ul>
-        <div className="ott-nav-actions">
-          <button className="ott-search-btn" aria-label="Search">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-          </button>
-          <div className="ott-avatar">BB</div>
-        </div>
-      </nav>
-
-      {/* HERO */}
+      <Navbar/>
+    {/* HERO */}
       <section className="ott-hero">
         <div className="ott-hero-bg" />
         <img
@@ -490,7 +419,7 @@ export default function BhoothBangla() {
           <div className="ott-badges">
             <span className="ott-badge">HORROR</span>
             <span className="ott-badge">COMEDY</span>
-            <span className="ott-badge new">NEW</span>
+            <span className="ott+-badge new">NEW</span>
           </div>
 
           <h1 className="ott-hero-title">BHOOTH<br/>BANGLA</h1>
